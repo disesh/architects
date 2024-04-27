@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+
+  phones_service:
+    restart: on-failure
+    container_name: phones_service
+    build: phones_service/
+    ports:
+      - "8000:80"
+
+  shop_service:
+    restart: on-failure
+    container_name: shop_service
+    build: shop_service/
+    ports:
+      - "8001:80"
