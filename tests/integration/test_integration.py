@@ -10,7 +10,7 @@ sys.path.append(str(BASE_DIR / 'phones_service/app'))
 sys.path.append(str(BASE_DIR / 'shop_service/app'))
 
 from phones_service.app.main import service_alive as phone_status
-from shop_service.app.main import service_alive as phone_store_status
+from shop_service.app.main import service_alive as shop_status
 
 @pytest.mark.asyncio
 async def test_database_connection():
@@ -27,6 +27,6 @@ async def test_phone_service_connection():
     assert r == {'message': 'Service alive'}
 
 @pytest.mark.asyncio
-async def test_phone_store_service_connection():
-    r = await phone_store_status()
+async def test_shop_service_connection():
+    r = await shop_status()
     assert r == {'message': 'Service alive'}
